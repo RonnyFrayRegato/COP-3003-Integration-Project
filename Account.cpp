@@ -3,6 +3,8 @@
 // org:  COP 3003, 202108, 80602
 // desc: implementation of an Account class object
 // --------------------------------------------------------
+#include <iostream>
+
 #include "Account.h"
 
 // constructors
@@ -27,6 +29,7 @@ Account::Account(std::string name, double initial_deposit, double interest_rate)
 // accessors
 // --------------------------------------------------------
 // getters
+int Account::GetAccountNumber() { return account_number_; }
 std::string Account::GetName() { return name_; }
 double Account::GetBalance() { return balance_; }
 double Account::GetInterestRate() { return interest_rate_; }

@@ -1,4 +1,4 @@
-// file: CheckingAccount.cpp
+// file: SavingsAccount.cpp
 // by:	 Ronny Fray Regato
 // org:  COP 3003, 202108, 80602
 // desc: implementation of a SavingsAccount class object

@@ -18,18 +18,22 @@ public:
 
 	// accessors
 	// getters
+	int GetAccountNumber();
 	std::string GetName();
 	double GetBalance();
 	double GetInterestRate();
 
 	// setters
+	void SetAccountNumber(int account_number);
 	void SetName(std::string name);
 	void SetBalance(double balance);
 	void SetInterestRate(double interest_rate);
 
 	// member methods
+	void CreateAccount();
 
 private:
+	int account_number_;
 	std::string name_;
 	double balance_{};
 	double interest_rate_{};

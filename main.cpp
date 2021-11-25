@@ -50,7 +50,7 @@ int main()
 				CreateSavingsAccount(savings);
 				// FutureFileFunction(CreateSavingsAccount);
 				std::cout << "TEST" << std::endl; // DELETE
-			}
+		}
 		}
 		// else if (menu_choice == 2) {}
 		else if (menu_choice == 3)
