@@ -3,13 +3,12 @@
 // org:  COP 3003, 202108, 80602
 // desc: implementation of a SavingsAccount class object
 // --------------------------------------------------------
-
 #include "SavingsAccount.h"
 
 // constructors
 // --------------------------------------------------------
 /**
- default constructor - update account number for new checking account
+ default constructor - update account number for new savings account
 */
 SavingsAccount::SavingsAccount()
 {
@@ -18,9 +17,9 @@ SavingsAccount::SavingsAccount()
 
 
 /**
- properties constructor - initialize a custom savings account
+ properties constructor - initialize a custom savings account via call to matching base constructor
 */
-SavingsAccount::SavingsAccount(std::string name, double initial_deposit, double interest_rate) // overload constructor
+SavingsAccount::SavingsAccount(std::string name, double initial_deposit, double interest_rate)
 	: Account(name, initial_deposit, interest_rate) {}
 
 
@@ -30,5 +29,4 @@ SavingsAccount::SavingsAccount(std::string name, double initial_deposit, double 
 int SavingsAccount::GetAccountNumber() { return account_number_; }
 
 // setters
-// set static member variable to 0
-int SavingsAccount::account_number_ = 0;
+int SavingsAccount::account_number_ = 0; // set static member variable to 0

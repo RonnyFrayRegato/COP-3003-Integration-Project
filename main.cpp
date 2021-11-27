@@ -3,7 +3,6 @@
 // org:  COP 3003, 202108, 80602
 // desc: banking app that allows user to create or review account(s) and perform transactions
 // --------------------------------------------------------
-
 #include <iostream>
 
 #include "Account.h"
@@ -13,11 +12,12 @@
 // function prototypes
 int PromptUser();
 char AccountSelection();
-void CreateCheckingAccount(CheckingAccount checking);
-void DisplayCheckingAccount(CheckingAccount checking);
-void CreateSavingsAccount(SavingsAccount savings);
-void DisplaySavingsAccount(SavingsAccount savings);
+void CreateCheckingAccount(Account* checking);
+void DisplayCheckingAccount(Account* checking);
+void CreateSavingsAccount(Account* savings);
+void DisplaySavingsAccount(Account* savings);
 
+// main
 int main()
 {
 	int menu_choice;
@@ -28,29 +28,25 @@ int main()
 	do
 	{
 		menu_choice = PromptUser();
+		Account* checking = new CheckingAccount();
+		Account* savings = new SavingsAccount();
 
 		if (menu_choice == 1)
 		{
 			account_creation = AccountSelection();
-			CheckingAccount checking;
-			SavingsAccount savings;
 
 			switch (account_creation)
 			{
 			case 'c':
-			// {
 				// functions related to creating a new checking account
-				// CheckingAccount checking;
 				CreateCheckingAccount(checking);
-				// FutureFileFunction(CreateCheckingAccount);
+				// FutureFileFunction(checking);
 				break;
-			// }
 			case 's':
 				// functions related to creating a new savings account
 				CreateSavingsAccount(savings);
-				// FutureFileFunction(CreateSavingsAccount);
-				std::cout << "TEST" << std::endl; // DELETE
-		}
+				// FutureFileFunction(savings);
+			}
 		}
 		// else if (menu_choice == 2) {}
 		else if (menu_choice == 3)
@@ -86,109 +82,116 @@ int PromptUser()
 } // end PromptUser
 
 
+/**
+ prompt user for type of account to be created, and return the char value associated with account type
+
+ Parameters:
+
+ Returns:
+ char				account type to be created
+*/
 char AccountSelection()
 {
+	std::string account_type;
 	char account_selection;
 
-	std::cout << "Enter the type of account to create (c/s): " << std::endl;
-	std::cin >> account_selection;
+	std::cout << "Enter the type of account to create (checking or savings): " << std::endl;
+	std::cin >> account_type;
 	std::cin.ignore();
+	account_selection = tolower(account_type.at(0));
 
 	return account_selection;
 } // end AccountSelection
 
 
 /**
- N/A
+ Prompt user for their name and initial deposit, create checking account, and display account info
 
  Parameters:
+ Account*				pointer of Account type resolved via dynamic dispatch
 
  Returns:
- N/A				N/A
+ void
 */
-// void CreateAccount(Account* account1)
-void CreateCheckingAccount(CheckingAccount checking)
+void CreateCheckingAccount(Account* checking)
 {
-	// Account* account = &checking;	Polymorhpishm
 	std::string name;
 	double initial_deposit;
 
 	std::cout << "Enter your name: " << std::endl;
 	std::cin >> name;
-	// checking->SetName(name);
-	checking.SetName(name);
+	checking->SetName(name);
 	std::cin.ignore();
 
 	std::cout << "Enter an initial deposit amount: " << std::endl;
 	std::cin >> initial_deposit;
-	// checking->SetBalance(initial_deposit);
-	checking.SetBalance(initial_deposit);
+	checking->SetBalance(initial_deposit);
 	std::cin.ignore();
 
-	std::cout << "Checking Account Created" << std::endl;
+	std::cout << std::endl << "Checking Account Created" << std::endl;
 	DisplayCheckingAccount(checking);
 } // end CreateCheckingAccount
 
 
-void DisplayCheckingAccount(CheckingAccount checking)
+/**
+ Display checking account info
+
+ Parameters:
+ Account*				pointer of Account type resolved via dynamic dispatch
+
+ Returns:
+ void
+*/
+void DisplayCheckingAccount(Account* checking)
 {
 	std::cout << "Your account number is: " << CheckingAccount::GetAccountNumber() << std::endl;
-	std::cout << checking.GetName() << std::endl;
-	std::cout << checking.GetBalance() << std::endl;
+	std::cout << "Name: " << checking->GetName() << std::endl;
+	std::cout << "Current Balance: " << checking->GetBalance() << std::endl << std::endl;
 } // end DisplayCheckingAccount
 
 
-void CreateSavingsAccount(SavingsAccount savings)
+/**
+ Prompt user for their name and initial deposit, create savings account, and display account info
+
+ Parameters:
+ Account*				pointer of Account type resolved via dynamic dispatch
+
+ Returns:
+ void
+*/
+void CreateSavingsAccount(Account* savings)
 {
 	std::string name;
 	double initial_deposit;
 
 	std::cout << "Enter your name: " << std::endl;
 	std::cin >> name;
-	// checking->SetName(name);
-	savings.SetName(name);
+	savings->SetName(name);
 	std::cin.ignore();
 
 	std::cout << "Enter an initial deposit amount: " << std::endl;
 	std::cin >> initial_deposit;
-	// checking->SetBalance(initial_deposit);
-	savings.SetBalance(initial_deposit);
+	savings->SetBalance(initial_deposit);
 	std::cin.ignore();
 
-	std::cout << "Checking Account Created" << std::endl;
+	std::cout << std::endl << "Savings Account Created" << std::endl;
 	DisplaySavingsAccount(savings);
 } // end CreateSavingsAccount
 
 
-void DisplaySavingsAccount(SavingsAccount savings)
-{
-	std::cout << "Your account number is: " << CheckingAccount::GetAccountNumber() << std::endl;
-	std::cout << savings.GetName() << std::endl;
-	std::cout << savings.GetBalance() << std::endl;
-	std::cout << savings.GetInterestRate() << std::endl;
-} // end DisplaySavingsAccount
+/**
+ Display savings account info
 
+ Parameters:
+ Account*				pointer of Account type resolved via dynamic dispatch
 
-
-
-/*
-
-
-switch (account_creation)
-			{
-			case 'c':
-				// functions related to creating a new checking account
-				CheckingAccount checking;
-				CreateCheckingAccount(checking);
-				// FutureFileFunction(CreateCheckingAccount);
-				break;
-			case 's':
-				// functions related to creating a new savings account
-				// CreateSavingsAccount();
-				// FutureFileFunction(CreateSavingsAccount);
-				std::cout << "TEST" << std::endl; // DELETE
-				break;
-			}
-
-
+ Returns:
+ void
 */
+void DisplaySavingsAccount(Account* savings)
+{
+	std::cout << "Your account number is: " << SavingsAccount::GetAccountNumber() << std::endl;
+	std::cout << "Name: " << savings->GetName() << std::endl;
+	std::cout << "Current Balance: " << savings->GetBalance() << std::endl;
+	std::cout << "Interest Rate: " << savings->GetInterestRate() << "%" << std::endl << std::endl;	// added enl
+} // end DisplaySavingsAccount

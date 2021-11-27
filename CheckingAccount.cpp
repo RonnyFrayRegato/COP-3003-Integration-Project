@@ -3,7 +3,6 @@
 // org:  COP 3003, 202108, 80602
 // desc: implementation of a CheckingAccount class object
 // --------------------------------------------------------
-
 #include "CheckingAccount.h"
 
 // constructors
@@ -18,7 +17,7 @@ CheckingAccount::CheckingAccount()
 
 
 /**
- properties constructor - initialize a custom account via call to matching base constructor
+ properties constructor - initialize a custom checking account via call to matching base constructor
 */
 CheckingAccount::CheckingAccount(std::string name, double initial_deposit)
 	: Account(name, initial_deposit) {}
@@ -30,5 +29,4 @@ CheckingAccount::CheckingAccount(std::string name, double initial_deposit)
 int CheckingAccount::GetAccountNumber() { return account_number_; }
 
 // setters
-// set static member variable to 0
-int CheckingAccount::account_number_ = 0;
+int CheckingAccount::account_number_ = 0; // set static member variable to 0

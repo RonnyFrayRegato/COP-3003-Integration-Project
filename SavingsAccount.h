@@ -25,7 +25,6 @@ public:
 
 private:
 	static int account_number_;
-	// double interest_rate_{};
 };
 
 #endif // SAVINGSACCOUNT_H

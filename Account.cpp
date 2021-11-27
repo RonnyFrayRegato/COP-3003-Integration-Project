@@ -3,8 +3,6 @@
 // org:  COP 3003, 202108, 80602
 // desc: implementation of an Account class object
 // --------------------------------------------------------
-#include <iostream>
-
 #include "Account.h"
 
 // constructors
@@ -16,15 +14,18 @@ Account::Account() : name_{ "Default User" }, balance_{0.00} {} // Initialize me
 
 
 /**
- properties constructor - initialize a custom account
+ properties constructor - initialize a custom checking account
 */
-Account::Account(std::string name, double initial_deposit) // overload constructor
+Account::Account(std::string name, double initial_deposit)
 	: name_{ name }, balance_{ initial_deposit } {}
 
 
-// DELETE
+/**
+ properties constructor - initialize a custom savings account
+*/
 Account::Account(std::string name, double initial_deposit, double interest_rate)
 	: name_{ name }, balance_{ initial_deposit }, interest_rate_{ interest_rate } {}
+
 
 // accessors
 // --------------------------------------------------------
