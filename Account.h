@@ -18,7 +18,7 @@ public:
 
 	// accessors
 	// getters
-	int GetAccountNumber();
+	// int GetAccountNumber();
 	std::string GetName();
 	double GetBalance();
 	double GetInterestRate();
@@ -31,7 +31,7 @@ public:
 	// member methods
 
 private:
-	int account_number_;
+	// int account_number_;
 	std::string name_;
 	double balance_{};
 	double interest_rate_{ 0.45 };
