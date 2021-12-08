@@ -4,6 +4,7 @@
 // desc: banking app that allows user to create or review account(s) and perform transactions
 // --------------------------------------------------------
 #include <iostream>
+#include <fstream>	// Version 2.2: File Implementation
 
 #include "Account.h"
 #include "CheckingAccount.h"
@@ -16,12 +17,14 @@ void CreateCheckingAccount(Account* checking);
 void DisplayCheckingAccount(Account* checking);
 void CreateSavingsAccount(Account* savings);
 void DisplaySavingsAccount(Account* savings);
+void WriteAccount(Account* account); // Version 2.2: File Implementation
 
 // main
 int main()
 {
 	int menu_choice;
 	char account_creation;
+	// std::fstream bankFile("bank.txt", std::ios::in | std::ios::out | std::ios::app); // Version 2.2: File Implementation
 
 	// main loop for user selection
 	bool loop = true;
@@ -40,12 +43,12 @@ int main()
 			case 'c':
 				// functions related to creating a new checking account
 				CreateCheckingAccount(checking);
-				// FutureFileFunction(checking);
+				WriteAccount(checking); // Version 2.2: File Implementation
 				break;
 			case 's':
 				// functions related to creating a new savings account
 				CreateSavingsAccount(savings);
-				// FutureFileFunction(savings);
+				WriteAccount(savings); // Version 2.2: File Implementation
 			}
 		}
 		// else if (menu_choice == 2) {}
@@ -195,3 +198,11 @@ void DisplaySavingsAccount(Account* savings)
 	std::cout << "Current Balance: " << savings->GetBalance() << std::endl;
 	std::cout << "Interest Rate: " << savings->GetInterestRate() << "%" << std::endl << std::endl;	// added enl
 } // end DisplaySavingsAccount
+
+
+void WriteAccount(Account* account) // Version 2.2: File Implementation
+{
+	std::fstream bankFile("bank.txt", std::ios::out | std::ios::app);
+	bankFile << "Account Number: " <<  CheckingAccount::GetAccountNumber() << std::endl << "Name: " << account->GetName() << std::endl 
+		<< "Current Balance: " << account->GetBalance() << std::endl;
+}
