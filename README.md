@@ -2,6 +2,9 @@
 Integrating OOP skills from Programming II. <br /> <br />
 
 
+https://ronnyfrayregato.github.io/COP-3003-Integration-Project/html/ <br /> <br />
+
+
 Compare and contrast the procedural/functional approach and the object-oriented approach:
 
 Procedural and object-oriented programming are different approaches in managing code and data. In the procedural approach, programs are constructed as a set of procedures to be completed, one after another. Programs handle data and code together through the passing of data by program code directly. On the other hand, in the object-oriented approach, programs are designed around objects, groupings of data representing a real item. Data and program code are managed separately, allowing for more control over and compartmentalization of changes to data and reducing the chance for bugs to appear. The modular nature of objects also allows for the ease of reuse of objects in other programs requiring their functionality. <br /> <br />
