@@ -1,14 +1,23 @@
-// file: CheckingAccount.h
-// by:	 Ronny Fray Regato
-// org:  COP 3003, 202108, 80602
-// desc: declaration of a CheckingAccount class object
-// --------------------------------------------------------
+/**
+ * @file CheckingAccount.h
+ * @brief Declaration of a CheckingAccount class object.
+ *
+ * @author Ronny Fray Regato
+ * @bug No known bugs.
+*/
 #ifndef CHECKINGACCOUNT_H
 #define CHECKINGACCOUNT_H
 
 #include "Account.h"
 
-class CheckingAccount : public Account
+/**
+ * @brief A CheckingAccount class representing a checking account
+ *
+ * This is a CheckingAccount class used to inherit fields and methods common
+ * in a bank account, as well as implement behaviors unique to a checking
+ * account.
+*/
+class CheckingAccount : public Account // LO2
 {
 public:
 	// constructors
@@ -25,7 +34,7 @@ public:
 	void Withdraw(double amount) override;
 
 private:
-	
+
 };
 
 #endif // CHECKINGACCOUNT_H

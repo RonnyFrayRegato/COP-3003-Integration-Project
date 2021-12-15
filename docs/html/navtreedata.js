@@ -26,6 +26,7 @@ var NAVTREE =
 [
   [ "BankingApp", "index.html", [
     [ "COP-3003-Integration-Project", "md__c___users_ronny__documents__visual__studio_2019__visual__studio__projects__c_o_p_3003____pro957fea8fd99348e96179e58a17427cb6.html", null ],
+    [ "Bug List", "bug.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -36,14 +37,18 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Files", "files.html", [
-      [ "File List", "files.html", "files_dup" ]
+      [ "File List", "files.html", "files_dup" ],
+      [ "File Members", "globals.html", [
+        [ "All", "globals.html", null ],
+        [ "Functions", "globals_func.html", null ]
+      ] ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"_account_8h_source.html"
+"_account_8cpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

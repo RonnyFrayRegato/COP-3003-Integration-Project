@@ -90,24 +90,32 @@ $(document).ready(function(){initNavTree('class_account.html',''); initResizable
   <div class="headertitle"><div class="title">Account Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>An <a class="el" href="class_account.html" title="An Account class representing a bank account.">Account</a> class representing a bank account.  
+ <a href="class_account.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_account_8h_source.html">Account.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Account:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_account.png" usemap="#Account_map" alt=""/>
   <map id="Account_map" name="Account_map">
-<area href="class_checking_account.html" alt="CheckingAccount" shape="rect" coords="0,56,112,80"/>
-<area href="class_savings_account.html" alt="SavingsAccount" shape="rect" coords="122,56,234,80"/>
+<area href="class_checking_account.html" title="A CheckingAccount class representing a checking account." alt="CheckingAccount" shape="rect" coords="0,56,112,80"/>
+<area href="class_savings_account.html" title="A SavingsAccount class representing a savings account." alt="SavingsAccount" shape="rect" coords="122,56,234,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a366660970b5eeb5c17436062327f1b14"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_account.html#a366660970b5eeb5c17436062327f1b14">Account</a> ()</td></tr>
+<tr class="memdesc:a366660970b5eeb5c17436062327f1b14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor - initialize default account.  <a href="class_account.html#a366660970b5eeb5c17436062327f1b14">More...</a><br /></td></tr>
 <tr class="separator:a366660970b5eeb5c17436062327f1b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed3c30ff6e0994c9647afb66220cba9d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_account.html#aed3c30ff6e0994c9647afb66220cba9d">Account</a> (std::string name, double initial_deposit)</td></tr>
+<tr class="memdesc:aed3c30ff6e0994c9647afb66220cba9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Properties constructor - initialize a custom checking account.  <a href="class_account.html#aed3c30ff6e0994c9647afb66220cba9d">More...</a><br /></td></tr>
 <tr class="separator:aed3c30ff6e0994c9647afb66220cba9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a714e0d98f20e7d4596e4541ad2a4b802"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_account.html#a714e0d98f20e7d4596e4541ad2a4b802">Account</a> (std::string name, double initial_deposit, double interest_rate)</td></tr>
+<tr class="memdesc:a714e0d98f20e7d4596e4541ad2a4b802"><td class="mdescLeft">&#160;</td><td class="mdescRight">Properties constructor - Initialize a custom savings account.  <a href="class_account.html#a714e0d98f20e7d4596e4541ad2a4b802">More...</a><br /></td></tr>
 <tr class="separator:a714e0d98f20e7d4596e4541ad2a4b802"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed484fe83e9cb3f06a52cf81a8646b62"><td class="memItemLeft" align="right" valign="top"><a id="aed484fe83e9cb3f06a52cf81a8646b62" name="aed484fe83e9cb3f06a52cf81a8646b62"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetName</b> ()</td></tr>
@@ -128,8 +136,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetBalance</b> (doubl
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetInterestRate</b> (double interest_rate)</td></tr>
 <tr class="separator:af3d409ebd08a233acfc28f1d16be99fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf58dde7e76d44c43f37e35e1f53b5e2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_account.html#adf58dde7e76d44c43f37e35e1f53b5e2">Deposit</a> (double amount)</td></tr>
+<tr class="memdesc:adf58dde7e76d44c43f37e35e1f53b5e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds an amount via customer input to account balance.  <a href="class_account.html#adf58dde7e76d44c43f37e35e1f53b5e2">More...</a><br /></td></tr>
 <tr class="separator:adf58dde7e76d44c43f37e35e1f53b5e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a717b5a363c39c4b61f204f7aefda9306"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_account.html#a717b5a363c39c4b61f204f7aefda9306">Withdraw</a> (double amount)</td></tr>
+<tr class="memdesc:a717b5a363c39c4b61f204f7aefda9306"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtracts an amount via customer input from account balance.  <a href="class_account.html#a717b5a363c39c4b61f204f7aefda9306">More...</a><br /></td></tr>
 <tr class="separator:a717b5a363c39c4b61f204f7aefda9306"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
@@ -144,7 +154,10 @@ Static Protected Attributes</h2></td></tr>
 static int&#160;</td><td class="memItemRight" valign="bottom"><b>account_number_</b> = 0</td></tr>
 <tr class="separator:a66c2e9b0d4835507d10fe8d9d5ff3f06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >An <a class="el" href="class_account.html" title="An Account class representing a bank account.">Account</a> class representing a bank account. </p>
+<p >This is an <a class="el" href="class_account.html" title="An Account class representing a bank account.">Account</a> class used to declare fields and methods common in all types of bank accounts. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a366660970b5eeb5c17436062327f1b14" name="a366660970b5eeb5c17436062327f1b14"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a366660970b5eeb5c17436062327f1b14">&#9670;&nbsp;</a></span>Account() <span class="overload">[1/3]</span></h2>
 
@@ -159,7 +172,9 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><b>account_number_
         </tr>
       </table>
 </div><div class="memdoc">
-<p >default constructor - initialize default account </p>
+
+<p>Default constructor - initialize default account. </p>
+<p >Initializes member variables with default values. </p>
 
 </div>
 </div>
@@ -188,7 +203,16 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><b>account_number_
         </tr>
       </table>
 </div><div class="memdoc">
-<p >properties constructor - initialize a custom checking account </p>
+
+<p>Properties constructor - initialize a custom checking account. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Checking account owner's name. </td></tr>
+    <tr><td class="paramname">initial_deposit</td><td>Amount deposited during account creation.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Initializes member variables to user input values for a checking account. The constructor is designed to be called from the derived <a class="el" href="class_checking_account.html" title="A CheckingAccount class representing a checking account.">CheckingAccount</a> class. </p>
 
 </div>
 </div>
@@ -223,7 +247,17 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><b>account_number_
         </tr>
       </table>
 </div><div class="memdoc">
-<p >properties constructor - initialize a custom savings account </p>
+
+<p>Properties constructor - Initialize a custom savings account. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Savings account owner's name. </td></tr>
+    <tr><td class="paramname">initial_deposit</td><td>Amount deposited during account creation. </td></tr>
+    <tr><td class="paramname">interest_rate</td><td>Percentage applied to account balance to calculate interest.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Initializes member variables to user input values for a savings account. The constructor is designed to be called from the derived <a class="el" href="class_savings_account.html" title="A SavingsAccount class representing a savings account.">SavingsAccount</a> class. </p>
 
 </div>
 </div>
@@ -251,9 +285,16 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><b>account_number_
   </tr>
 </table>
 </div><div class="memdoc">
-<p >N/A</p>
-<p >Parameters:</p>
-<p >Returns: N/A N/A </p>
+
+<p>Adds an amount via customer input to account balance. </p>
+<p >Virtual function in the <a class="el" href="class_account.html" title="An Account class representing a bank account.">Account</a> Class is designed to be overriden to the appropriate derived <a class="el" href="class_checking_account.html" title="A CheckingAccount class representing a checking account.">CheckingAccount</a> or <a class="el" href="class_savings_account.html" title="A SavingsAccount class representing a savings account.">SavingsAccount</a> class.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">amount</td><td>Desired customer amount to be desposited. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Void. </dd></dl>
 
 <p>Reimplemented in <a class="el" href="class_checking_account.html#a607fb4c484a3e32780b54a6b63440f62">CheckingAccount</a>, and <a class="el" href="class_savings_account.html#a3b3716038f0cd24f670749e3a5c09dfb">SavingsAccount</a>.</p>
 
@@ -282,9 +323,16 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><b>account_number_
   </tr>
 </table>
 </div><div class="memdoc">
-<p >N/A</p>
-<p >Parameters:</p>
-<p >Returns: N/A N/A </p>
+
+<p>Subtracts an amount via customer input from account balance. </p>
+<p >Virtual function in the <a class="el" href="class_account.html" title="An Account class representing a bank account.">Account</a> Class is designed to be overriden to the appropriate derived <a class="el" href="class_checking_account.html" title="A CheckingAccount class representing a checking account.">CheckingAccount</a> or <a class="el" href="class_savings_account.html" title="A SavingsAccount class representing a savings account.">SavingsAccount</a> class.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">amount</td><td>Desired customer amount to be withdrawn. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Void. </dd></dl>
 
 <p>Reimplemented in <a class="el" href="class_checking_account.html#ad385019ae6eea4583efece59239063d1">CheckingAccount</a>, and <a class="el" href="class_savings_account.html#a73f2ee09754204c9cb2cb7a2800f4d0c">SavingsAccount</a>.</p>
 
@@ -292,7 +340,7 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><b>account_number_
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>C:/Users/ronny/Documents/Visual Studio 2019/Visual Studio Projects/COP 3003 - Programming II/BankingApp/<a class="el" href="_account_8h_source.html">Account.h</a></li>
-<li>C:/Users/ronny/Documents/Visual Studio 2019/Visual Studio Projects/COP 3003 - Programming II/BankingApp/Account.cpp</li>
+<li>C:/Users/ronny/Documents/Visual Studio 2019/Visual Studio Projects/COP 3003 - Programming II/BankingApp/<a class="el" href="_account_8cpp.html">Account.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

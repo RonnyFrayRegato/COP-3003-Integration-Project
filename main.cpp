@@ -1,11 +1,13 @@
-// file: main.cpp
-// by:   Ronny Fray Regato
-// org:  COP 3003, 202108, 80602
-// desc: banking app that allows user to create or review account(s) and perform transactions
-// --------------------------------------------------------
+/**
+ * @file main.cpp
+ * @brief Banking app that allows user to create or review account(s) and perform transactions.
+ *
+ * @author Ronny Fray Regato
+ * @bug No known bugs.
+*/
 #include <iostream>
 #include <fstream>	// Version 2.2: File Implementation
-#include <vector>	// Version 2.4: Data Structure Implementation
+#include <vector>
 
 #include "Account.h"
 #include "CheckingAccount.h"
@@ -20,15 +22,28 @@ void CreateSavingsAccount(Account* savings);
 void DisplaySavingsAccount(Account* savings);
 int PromptUserModification();
 void AccountModification(std::vector<Account*>& accounts);
-// void WriteAccount(Account* account); // Version 2.2: File Implementation
 
-// main
+/**
+ * @brief BankingApp program entry point.
+ * 
+ * This is the 'main' function. Program execution begins and ends there. The program begins with a with a menu and
+ * prompt to choose actions related to an account. The control flow is implemented via an if statement for the account
+ * actions and a switch statement for the selection of specific functions related to the selected actions. Program
+ * execution ends via user input by way of the if statement.
+ * 
+ * @return Should not return.
+*/
 int main()
 {
-	std::vector<Account*> accounts; // Version 2.4: Data Structure Implementation
+	/**
+	 * @brief Vector containing Account superclass type pointers.
+	 * 
+	 * Data structure contains pointers of superclass type that point to addresses of subclasses. The Account type
+	 * pointers call functions implemented in subclasses via dynamic disptach.
+	*/
+	std::vector<Account*> accounts;
 	int menu_choice{};
 	char account_creation{};
-	// std::fstream bankFile("bank.txt", std::ios::in | std::ios::out | std::ios::app); // Version 2.2: File Implementation
 
 	// main loop for user selection
 	bool loop = true;
@@ -48,17 +63,17 @@ int main()
 				CheckingAccount checking;
 				Account* account = &checking;
 				CreateCheckingAccount(account);
-				accounts.push_back(account);	// Version 2.4: Data Structure Implementation
+				accounts.push_back(account);
 				// WriteAccount(checking); // Version 2.2: File Implementation
-			}
 				break;
+			}
 			case 's':
 			{
 				// functions related to creating a new savings account
 				SavingsAccount savings;
 				Account* account = &savings;
 				CreateSavingsAccount(account);
-				accounts.push_back(account);	// Version 2.4: Data Structure Implementation
+				accounts.push_back(account);
 				// WriteAccount(savings); // Version 2.2: File Implementation
 				break;
 			}
@@ -81,35 +96,30 @@ int main()
 
 
 /**
- display the user menu, prompt for menu choice, and return the int value entered by the user
-
- Parameters:
-
- Returns:
- int				user choice from menu
+ * @brief Display the user menu, prompt for menu choice, and return the int value entered by the user.
+ * 
+ * This function utilizes a menu for the purpose of customer selection of account option type.
+ * 
+ * @return user_selection User choice from menu.
 */
 int PromptUser()
 {
-	int User_Selection{};
+	int user_selection{};
 
 	std::cout << "Select an option from the menu below:" << std::endl;
 	std::cout << "\t1) Create a new account" << std::endl;
 	std::cout << "\t2) Modify an existing account" << std::endl;
 	std::cout << "\t3) Exit" << std::endl;
-	std::cin >> User_Selection;
+	std::cin >> user_selection;
 	std::cin.ignore();
 
-	return User_Selection;
+	return user_selection;
 } // end PromptUser
 
 
 /**
- prompt user for type of account to be created, and return the char value associated with account type
-
- Parameters:
-
- Returns:
- char				account type to be created
+ * @brief Prompt user for type of account to be created, and return the char value associated with account type.
+ * @return account_selection Account type to be created.
 */
 char AccountSelection()
 {
@@ -126,13 +136,9 @@ char AccountSelection()
 
 
 /**
- Prompt user for their name and initial deposit, create checking account, and display account info
-
- Parameters:
- Account*				pointer of Account type resolved via dynamic dispatch
-
- Returns:
- void
+ * @brief Prompt user for their name and initial deposit, create checking account, and display account info.
+ * @param checking Pointer of Account superclass type to address of CheckingAccount subclass object.
+ * @return Void.
 */
 void CreateCheckingAccount(Account* checking)
 {
@@ -155,13 +161,9 @@ void CreateCheckingAccount(Account* checking)
 
 
 /**
- Display checking account info
-
- Parameters:
- Account*				pointer of Account type resolved via dynamic dispatch
-
- Returns:
- void
+ * @brief Display checking account information.
+ * @param checking Pointer of Account superclass type to address of CheckingAccount subclass object.
+ * @return Void.
 */
 void DisplayCheckingAccount(Account* checking)
 {
@@ -172,13 +174,9 @@ void DisplayCheckingAccount(Account* checking)
 
 
 /**
- Prompt user for their name and initial deposit, create savings account, and display account info
-
- Parameters:
- Account*				pointer of Account type resolved via dynamic dispatch
-
- Returns:
- void
+ * @brief Prompt user for their name and initial deposit, create savings account, and display account info.
+ * @param savings Pointer of Account superclass type to address of SavingsAccount subclass object.
+ * @return Void.
 */
 void CreateSavingsAccount(Account* savings)
 {
@@ -201,13 +199,9 @@ void CreateSavingsAccount(Account* savings)
 
 
 /**
- Display savings account info
-
- Parameters:
- Account*				pointer of Account type resolved via dynamic dispatch
-
- Returns:
- void
+ * @brief Display savings account information.
+ * @param savings Pointer of Account superclass type to address of SavingsAccount subclass object.
+ * @return Void.
 */
 void DisplaySavingsAccount(Account* savings)
 {
@@ -218,21 +212,38 @@ void DisplaySavingsAccount(Account* savings)
 } // end DisplaySavingsAccount
 
 
+/**
+ * @brief Display the user menu, prompt for menu choice, and return the int value entered by the user.
+ * 
+ * This function utilizes a menu for the purpose of customer selection of account transction type.
+ * 
+ * @return user_selection User choice from menu.
+*/
 int PromptUserModification()
 {
-	int User_Selection{};
+	int user_selection{};
 
 	std::cout << std::endl << "Select the type of transction to be performed from the menu below:" << std::endl;
 	std::cout << "\t1) Deposit" << std::endl;
 	std::cout << "\t2) Withdraw" << std::endl;
-	std::cin >> User_Selection;
+	std::cin >> user_selection;
 	std::cin.ignore();
 
-	return User_Selection;
+	return user_selection;
 } // end PromptUserModification
 
 
-void AccountModification(std::vector<Account*>& accounts)
+/**
+ * @brief Prompt user for account number and transction type, and perform transctions.
+ * 
+ * This function prompts the user for their account number and utilizes and if statement to check its validity. Upon
+ * verification, the function promts the user for a transaction to perform and executes transction by calling methods
+ * of the objects whose addresses are pointed to by pointers stored in the vector.
+ * 
+ * @param accounts Vector containing Account superclass type pointers.
+ * @return Void.
+*/
+void AccountModification(std::vector<Account*>& accounts) // LO3, LO7
 {
 	int entered_account_number;
 	int menu_choice;
@@ -274,13 +285,3 @@ void AccountModification(std::vector<Account*>& accounts)
 		std::cout << "Invalid account number. Please enter a valid account number for proper access." << std::endl;
 	}
 } // end AccountModification
-
-
-/*
-void WriteAccount(Account* account) // Version 2.2: File Implementation
-{
-	std::fstream bankFile("bank.txt", std::ios::out | std::ios::app);
-	bankFile << "Account Number: " << CheckingAccount::GetAccountNumber() << std::endl << "Name: " << account->GetName() << std::endl
-		<< "Current Balance: " << account->GetBalance() << std::endl;
-}
-*/

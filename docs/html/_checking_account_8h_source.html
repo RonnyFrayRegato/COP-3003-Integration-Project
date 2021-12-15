@@ -85,48 +85,45 @@ $(document).ready(function(){initNavTree('_checking_account_8h_source.html','');
   <div class="headertitle"><div class="title">CheckingAccount.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// file: CheckingAccount.h</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// by:   Ronny Fray Regato</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// org:  COP 3003, 202108, 80602</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// desc: declaration of a CheckingAccount class object</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// --------------------------------------------------------</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef CHECKINGACCOUNT_H</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define CHECKINGACCOUNT_H</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;Account.h&quot;</span></div>
+<a href="_checking_account_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef CHECKINGACCOUNT_H</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define CHECKINGACCOUNT_H</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="class_checking_account.html">   11</a></span><span class="keyword">class </span><a class="code hl_class" href="class_checking_account.html">CheckingAccount</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_account.html">Account</a></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="comment">// constructors</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_function" href="class_checking_account.html#a6d91c7966d5ff7dbff007f2450875c3b">CheckingAccount</a>();</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <a class="code hl_function" href="class_checking_account.html#a6d91c7966d5ff7dbff007f2450875c3b">CheckingAccount</a>(std::string name, <span class="keywordtype">double</span> initial_deposit);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="comment">// accessors</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="comment">// getters</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">// setters</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">// member methods</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_checking_account.html#a607fb4c484a3e32780b54a6b63440f62">Deposit</a>(<span class="keywordtype">double</span> amount) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_checking_account.html#ad385019ae6eea4583efece59239063d1">Withdraw</a>(<span class="keywordtype">double</span> amount) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="_account_8h.html">Account.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="class_checking_account.html">   20</a></span><span class="keyword">class </span><a class="code hl_class" href="class_checking_account.html">CheckingAccount</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_account.html">Account</a> <span class="comment">// LO2</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>{</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">// constructors</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <a class="code hl_function" href="class_checking_account.html#a6d91c7966d5ff7dbff007f2450875c3b">CheckingAccount</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_function" href="class_checking_account.html#a6d91c7966d5ff7dbff007f2450875c3b">CheckingAccount</a>(std::string name, <span class="keywordtype">double</span> initial_deposit);</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#endif </span><span class="comment">// CHECKINGACCOUNT_H</span></div>
-<div class="ttc" id="aclass_account_html"><div class="ttname"><a href="class_account.html">Account</a></div><div class="ttdef"><b>Definition:</b> Account.h:12</div></div>
-<div class="ttc" id="aclass_checking_account_html"><div class="ttname"><a href="class_checking_account.html">CheckingAccount</a></div><div class="ttdef"><b>Definition:</b> CheckingAccount.h:12</div></div>
-<div class="ttc" id="aclass_checking_account_html_a607fb4c484a3e32780b54a6b63440f62"><div class="ttname"><a href="class_checking_account.html#a607fb4c484a3e32780b54a6b63440f62">CheckingAccount::Deposit</a></div><div class="ttdeci">void Deposit(double amount) override</div><div class="ttdef"><b>Definition:</b> CheckingAccount.cpp:43</div></div>
-<div class="ttc" id="aclass_checking_account_html_a6d91c7966d5ff7dbff007f2450875c3b"><div class="ttname"><a href="class_checking_account.html#a6d91c7966d5ff7dbff007f2450875c3b">CheckingAccount::CheckingAccount</a></div><div class="ttdeci">CheckingAccount()</div><div class="ttdef"><b>Definition:</b> CheckingAccount.cpp:13</div></div>
-<div class="ttc" id="aclass_checking_account_html_ad385019ae6eea4583efece59239063d1"><div class="ttname"><a href="class_checking_account.html#ad385019ae6eea4583efece59239063d1">CheckingAccount::Withdraw</a></div><div class="ttdeci">void Withdraw(double amount) override</div><div class="ttdef"><b>Definition:</b> CheckingAccount.cpp:59</div></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">// accessors</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="comment">// getters</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">// setters</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="comment">// member methods</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_checking_account.html#a607fb4c484a3e32780b54a6b63440f62">Deposit</a>(<span class="keywordtype">double</span> amount) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_checking_account.html#ad385019ae6eea4583efece59239063d1">Withdraw</a>(<span class="keywordtype">double</span> amount) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>};</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif </span><span class="comment">// CHECKINGACCOUNT_H</span></div>
+<div class="ttc" id="a_account_8h_html"><div class="ttname"><a href="_account_8h.html">Account.h</a></div><div class="ttdoc">Declaration of an Account class object.</div></div>
+<div class="ttc" id="aclass_account_html"><div class="ttname"><a href="class_account.html">Account</a></div><div class="ttdoc">An Account class representing a bank account.</div><div class="ttdef"><b>Definition:</b> Account.h:20</div></div>
+<div class="ttc" id="aclass_checking_account_html"><div class="ttname"><a href="class_checking_account.html">CheckingAccount</a></div><div class="ttdoc">A CheckingAccount class representing a checking account.</div><div class="ttdef"><b>Definition:</b> CheckingAccount.h:21</div></div>
+<div class="ttc" id="aclass_checking_account_html_a607fb4c484a3e32780b54a6b63440f62"><div class="ttname"><a href="class_checking_account.html#a607fb4c484a3e32780b54a6b63440f62">CheckingAccount::Deposit</a></div><div class="ttdeci">void Deposit(double amount) override</div><div class="ttdoc">Adds an amount via customer input to account balance.</div><div class="ttdef"><b>Definition:</b> CheckingAccount.cpp:52</div></div>
+<div class="ttc" id="aclass_checking_account_html_a6d91c7966d5ff7dbff007f2450875c3b"><div class="ttname"><a href="class_checking_account.html#a6d91c7966d5ff7dbff007f2450875c3b">CheckingAccount::CheckingAccount</a></div><div class="ttdeci">CheckingAccount()</div><div class="ttdoc">Default constructor - update account number for new checking account.</div><div class="ttdef"><b>Definition:</b> CheckingAccount.cpp:17</div></div>
+<div class="ttc" id="aclass_checking_account_html_ad385019ae6eea4583efece59239063d1"><div class="ttname"><a href="class_checking_account.html#ad385019ae6eea4583efece59239063d1">CheckingAccount::Withdraw</a></div><div class="ttdeci">void Withdraw(double amount) override</div><div class="ttdoc">Subtracts an amount via customer input from account balance.</div><div class="ttdef"><b>Definition:</b> CheckingAccount.cpp:69</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d522931ffa1371640980b621734a4381.html">Users</a></li><li class="navelem"><a class="el" href="dir_f30f7923cb6fa2fdbfc0b713394665c2.html">ronny</a></li><li class="navelem"><a class="el" href="dir_4612f3f17c5b6af011a5a4cf09dc6385.html">Documents</a></li><li class="navelem"><a class="el" href="dir_d631ceb55acf500580bdc5caa50cc6ec.html">Visual Studio 2019</a></li><li class="navelem"><a class="el" href="dir_e1866fb5c01982140e048e529a2c29d0.html">Visual Studio Projects</a></li><li class="navelem"><a class="el" href="dir_7ae252e4a07832c7ac6a1e7ccf73e2be.html">COP 3003 - Programming II</a></li><li class="navelem"><a class="el" href="dir_29e3218e20813ec990cfe8a70663efa2.html">BankingApp</a></li><li class="navelem"><b>CheckingAccount.h</b></li>
+    <li class="navelem"><a class="el" href="dir_d522931ffa1371640980b621734a4381.html">Users</a></li><li class="navelem"><a class="el" href="dir_f30f7923cb6fa2fdbfc0b713394665c2.html">ronny</a></li><li class="navelem"><a class="el" href="dir_4612f3f17c5b6af011a5a4cf09dc6385.html">Documents</a></li><li class="navelem"><a class="el" href="dir_d631ceb55acf500580bdc5caa50cc6ec.html">Visual Studio 2019</a></li><li class="navelem"><a class="el" href="dir_e1866fb5c01982140e048e529a2c29d0.html">Visual Studio Projects</a></li><li class="navelem"><a class="el" href="dir_7ae252e4a07832c7ac6a1e7ccf73e2be.html">COP 3003 - Programming II</a></li><li class="navelem"><a class="el" href="dir_29e3218e20813ec990cfe8a70663efa2.html">BankingApp</a></li><li class="navelem"><a class="el" href="_checking_account_8h.html">CheckingAccount.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
   </ul>
 </div>
