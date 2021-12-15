@@ -26,7 +26,39 @@ SavingsAccount::SavingsAccount(std::string name, double initial_deposit, double 
 // accessors
 // --------------------------------------------------------
 // getters
-int SavingsAccount::GetAccountNumber() { return account_number_; }
 
 // setters
-int SavingsAccount::account_number_ = 0; // set static member variable to 0
+
+
+// member methods
+// --------------------------------------------------------
+/**
+ N/A
+
+ Parameters:
+
+ Returns:
+ N/A				N/A
+*/
+void SavingsAccount::Deposit(double amount)
+{
+	double new_balance = GetBalance() + amount;
+
+	SetBalance(new_balance);
+}
+
+
+/**
+ N/A
+
+ Parameters:
+
+ Returns:
+ N/A				N/A
+*/
+void SavingsAccount::Withdraw(double amount)
+{
+	double new_balance = GetBalance() - amount;
+
+	SetBalance(new_balance);
+}

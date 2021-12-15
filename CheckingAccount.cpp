@@ -26,7 +26,39 @@ CheckingAccount::CheckingAccount(std::string name, double initial_deposit)
 // accessors
 // --------------------------------------------------------
 // getters
-int CheckingAccount::GetAccountNumber() { return account_number_; }
 
 // setters
-int CheckingAccount::account_number_ = 0; // set static member variable to 0
+
+
+// member methods
+// --------------------------------------------------------
+/**
+ N/A
+
+ Parameters:
+
+ Returns:
+ N/A				N/A
+*/
+void CheckingAccount::Deposit(double amount)
+{
+	double new_balance = GetBalance() + amount;
+
+	SetBalance(new_balance);
+}
+
+
+/**
+ N/A
+
+ Parameters:
+
+ Returns:
+ N/A				N/A
+*/
+void CheckingAccount::Withdraw(double amount)
+{
+	double new_balance = GetBalance() - amount;
+
+	SetBalance(new_balance);
+}

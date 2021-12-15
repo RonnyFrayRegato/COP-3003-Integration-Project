@@ -8,7 +8,7 @@
 
 #include "Account.h"
 
-class CheckingAccount :	public Account
+class CheckingAccount : public Account
 {
 public:
 	// constructors
@@ -17,14 +17,15 @@ public:
 
 	// accessors
 	// getters
-	static int GetAccountNumber();
 
 	// setters
 
 	// member methods
+	void Deposit(double amount) override;
+	void Withdraw(double amount) override;
 
 private:
-	static int account_number_;
+	
 };
 
 #endif // CHECKINGACCOUNT_H
