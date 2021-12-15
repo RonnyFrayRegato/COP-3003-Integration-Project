@@ -1,9 +1,71 @@
-# COP-3003-Integration-Project
-Integrating OOP skills from Programming II. <br /> <br />
+# BankingApp
+Hello! This GitHub repository contains a console application project that performs behaviors typical of a banking application. The project allows users to create or review account(s) and perform transactions. This project was desgined and implemented by Ronny Fray Regato, a Software Engineering student at Florida Gulf Coast University (FGCU) in Fort Myers, FL. The project was completed in December 2021. This project was delivered as a final integration project for FGCU's COP 3003 - Programming II course to demonstrate object-oriented principles. A majority of the design and implementation was accomplished at the university or at home.
 
 
-https://ronnyfrayregato.github.io/COP-3003-Integration-Project/html/ <br /> <br />
+## Demonstration
+![BankingApp](https://user-images.githubusercontent.com/71354370/146276083-7fccea1c-ac45-483e-9255-30fd92e39fd3.gif)
 
+
+## Documentation
+[Doxygen](https://ronnyfrayregato.github.io/COP-3003-Integration-Project/html/)
+
+
+## Diagrams
+<br /> <br />
+![Account](https://user-images.githubusercontent.com/71354370/146277611-533cc1ce-4670-4fe1-9aec-08a8bf895b95.png)
+<br /> <br /> <br /> <br />
+![CheckingAccount](https://user-images.githubusercontent.com/71354370/146277622-6e9cede0-460b-41db-8860-f0cecc3e1fc5.png)
+<br /> <br /> <br /> <br />
+![SavingsAccount](https://user-images.githubusercontent.com/71354370/146279878-50f5879a-89e7-47d2-be7c-811bbc4b1253.png)
+<br /> <br />
+
+
+## Getting Started
+In order to get a local copy of the project up and running, clone the GitHub repository and open the solution file in Microsoft Visual Studio. Add the header and .cpp files to the project folder. Once these steps are complete, a local copy of the project should be ready to run as demonstrated.
+
+
+## Built With
+* Microsoft Visual Studio  
+* Doxywizard 
+* ScreenToGif
+
+
+## Contributing
+Any contributions to the project are appreciated. The console application project implements several behaviors expected of a banking application. However, there is room to incorporate more behaviors into the project, such as implementing more transaction types.
+
+
+## Author
+* Ronny Fray Regato
+
+
+## License
+
+
+## Acknowledgments
+* Starting Out with C++: Early Objects, 10th Edition by Tony Gaddis
+* Professor Scott Vanselow, Software Engineering Department, FGCU
+
+
+## History
+* Version 3.0: first completed implementation, 12/15/2021
+
+
+## Key Programming Concepts Utilized
+* LO1. Design and implement a class.
+
+* LO2. Use subclassing to design simple class hierarchies that allow code to be reused for distinct subclasses.
+
+* LO3. Correctly reason about control flow in a program using dynamic dispatch.
+
+* LO4. Compare and contrast (1) the procedural/functional approach (defining a function for each operation with the function body providing a case for each data variant) and (2) the object-oriented approach (defining a class for each data variant with the class definition providing a method for each operation). Understand both as defining a matrix of operations and variants.
+
+* LO5. Explain the relationship between object-oriented inheritance (code-sharing and overriding) and subtyping (the idea of a subtype being usable in a context that expects the supertype).
+
+* LO6. Use object-oriented encapsulation mechanisms such as interfaces and private members.
+
+* LO7. Define and use iterators and other operations on aggregates, including operations that take functions as arguments.
+
+<br /> <br />
 
 LO2a. Describe the visibility inheritance model:
 
