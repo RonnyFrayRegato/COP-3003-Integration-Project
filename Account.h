@@ -24,17 +24,19 @@ public:
 	Account(std::string name, double initial_deposit); // LO1b
 	Account(std::string name, double initial_deposit, double interest_rate);
 
+	virtual ~Account() = default;
+
 	// accessors
 	// getters
-	std::string GetName();
-	double GetBalance();
-	double GetInterestRate();
-	static int GetAccountNumber();
+	auto GetName()->std::string;
+	auto GetBalance()noexcept->double;
+	auto GetInterestRate()noexcept->double;
+	static auto GetAccountNumber()noexcept->int;
 
 	// setters
 	void SetName(std::string name);
-	void SetBalance(double balance);
-	void SetInterestRate(double interest_rate);
+	void SetBalance(double balance) noexcept;
+	void SetInterestRate(double interest_rate) noexcept;
 
 	// member methods
 	virtual void Deposit(double amount);

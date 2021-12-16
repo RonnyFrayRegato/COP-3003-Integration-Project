@@ -21,7 +21,7 @@ class SavingsAccount : public Account
 {
 public:
 	// constructors
-	SavingsAccount();
+	SavingsAccount() noexcept;
 	SavingsAccount(std::string name, double initial_deposit, double interest_rate);
 
 	// accessors
@@ -30,8 +30,8 @@ public:
 	// setters
 
 	// member methods
-	void Deposit(double amount) override;
-	void Withdraw(double amount) override;
+	void Deposit(double amount) noexcept override;
+	void Withdraw(double amount) noexcept override;
 
 private:
 

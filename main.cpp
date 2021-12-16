@@ -6,7 +6,6 @@
  * @bug No known bugs.
 */
 #include <iostream>
-#include <fstream>	// Version 2.2: File Implementation
 #include <vector>
 
 #include "Account.h"
@@ -14,30 +13,30 @@
 #include "SavingsAccount.h"
 
 // function prototypes
-int PromptUser();
-char AccountSelection();
+auto PromptUser()->int;
+auto AccountSelection()->char;
 void CreateCheckingAccount(Account* checking);
 void DisplayCheckingAccount(Account* checking);
 void CreateSavingsAccount(Account* savings);
 void DisplaySavingsAccount(Account* savings);
-int PromptUserModification();
+auto PromptUserModification()->int;
 void AccountModification(std::vector<Account*>& accounts);
 
 /**
  * @brief BankingApp program entry point.
- * 
+ *
  * This is the 'main' function. Program execution begins and ends there. The program begins with a with a menu and
  * prompt to choose actions related to an account. The control flow is implemented via an if statement for the account
  * actions and a switch statement for the selection of specific functions related to the selected actions. Program
  * execution ends via user input by way of the if statement.
- * 
+ *
  * @return Should not return.
 */
-int main()
+auto main()->int
 {
 	/**
 	 * @brief Vector containing Account superclass type pointers.
-	 * 
+	 *
 	 * Data structure contains pointers of superclass type that point to addresses of subclasses. The Account type
 	 * pointers call functions implemented in subclasses via dynamic disptach.
 	*/
@@ -64,7 +63,6 @@ int main()
 				Account* account = &checking;
 				CreateCheckingAccount(account);
 				accounts.push_back(account);
-				// WriteAccount(checking); // Version 2.2: File Implementation
 				break;
 			}
 			case 's':
@@ -74,7 +72,6 @@ int main()
 				Account* account = &savings;
 				CreateSavingsAccount(account);
 				accounts.push_back(account);
-				// WriteAccount(savings); // Version 2.2: File Implementation
 				break;
 			}
 			default:
@@ -97,12 +94,12 @@ int main()
 
 /**
  * @brief Display the user menu, prompt for menu choice, and return the int value entered by the user.
- * 
+ *
  * This function utilizes a menu for the purpose of customer selection of account option type.
- * 
+ *
  * @return user_selection User choice from menu.
 */
-int PromptUser()
+auto PromptUser()->int
 {
 	int user_selection{};
 
@@ -121,7 +118,7 @@ int PromptUser()
  * @brief Prompt user for type of account to be created, and return the char value associated with account type.
  * @return account_selection Account type to be created.
 */
-char AccountSelection()
+auto AccountSelection()->char
 {
 	std::string account_type{};
 	char account_selection{};
@@ -167,7 +164,7 @@ void CreateCheckingAccount(Account* checking)
 */
 void DisplayCheckingAccount(Account* checking)
 {
-	std::cout << "Your account number is: " << checking->GetAccountNumber() << std::endl;
+	std::cout << "Your account number is: " << Account::GetAccountNumber() << std::endl;
 	std::cout << "Name: " << checking->GetName() << std::endl;
 	std::cout << "Current Balance: " << checking->GetBalance() << std::endl << std::endl;
 } // end DisplayCheckingAccount
@@ -205,7 +202,7 @@ void CreateSavingsAccount(Account* savings)
 */
 void DisplaySavingsAccount(Account* savings)
 {
-	std::cout << "Your account number is: " << savings->GetAccountNumber() << std::endl;
+	std::cout << "Your account number is: " << Account::GetAccountNumber() << std::endl;
 	std::cout << "Name: " << savings->GetName() << std::endl;
 	std::cout << "Current Balance: " << savings->GetBalance() << std::endl;
 	std::cout << "Interest Rate: " << savings->GetInterestRate() << "%" << std::endl << std::endl;
@@ -214,12 +211,12 @@ void DisplaySavingsAccount(Account* savings)
 
 /**
  * @brief Display the user menu, prompt for menu choice, and return the int value entered by the user.
- * 
+ *
  * This function utilizes a menu for the purpose of customer selection of account transction type.
- * 
+ *
  * @return user_selection User choice from menu.
 */
-int PromptUserModification()
+auto PromptUserModification()->int
 {
 	int user_selection{};
 
@@ -235,25 +232,26 @@ int PromptUserModification()
 
 /**
  * @brief Prompt user for account number and transction type, and perform transctions.
- * 
+ *
  * This function prompts the user for their account number and utilizes and if statement to check its validity. Upon
  * verification, the function promts the user for a transaction to perform and executes transction by calling methods
  * of the objects whose addresses are pointed to by pointers stored in the vector.
- * 
+ *
  * @param accounts Vector containing Account superclass type pointers.
  * @return Void.
 */
 void AccountModification(std::vector<Account*>& accounts) // LO3, LO7
 {
-	int entered_account_number;
-	int menu_choice;
-	double amount;
+	int entered_account_number{};
+	int menu_choice{};
+	constexpr int index_correction = 1;
+	double amount{};
 
 	std::cout << std::endl << "Enter the account number of the account to be modified: " << std::endl;
 	std::cin >> entered_account_number;
 	std::cin.ignore();
 
-	if (entered_account_number == accounts[entered_account_number - 1]->GetAccountNumber())
+	if (entered_account_number == accounts[static_cast<uint64_t>(entered_account_number) - static_cast<uint64_t>(index_correction)]->GetAccountNumber())
 	{
 		menu_choice = PromptUserModification();
 
@@ -262,18 +260,18 @@ void AccountModification(std::vector<Account*>& accounts) // LO3, LO7
 			std::cout << std::endl << "Enter the amount to deposit: " << std::endl;
 			std::cin >> amount;
 			std::cin.ignore();
-			accounts[entered_account_number - 1]->Deposit(amount);
+			accounts[static_cast<uint64_t>(entered_account_number) - static_cast<uint64_t>(index_correction)]->Deposit(amount);
 			std::cout << std::endl << "you have deposited $" << amount << std::endl;
-			std::cout << "your new balance is: $" << accounts[entered_account_number - 1]->GetBalance() << std::endl << std::endl;
+			std::cout << "your new balance is: $" << accounts[static_cast<uint64_t>(entered_account_number) - static_cast<uint64_t>(index_correction)]->GetBalance() << std::endl << std::endl;
 		}
 		else if (menu_choice == 2)
 		{
 			std::cout << std::endl << "Enter the amount to withdraw: " << std::endl;
 			std::cin >> amount;
 			std::cin.ignore();
-			accounts[entered_account_number - 1]->Withdraw(amount);
+			accounts[static_cast<uint64_t>(entered_account_number) - static_cast<uint64_t>(index_correction)]->Withdraw(amount);
 			std::cout << std::endl << "you have withdrawn $" << amount << std::endl;
-			std::cout << "your new balance is: $" << accounts[entered_account_number - 1]->GetBalance() << std::endl << std::endl;
+			std::cout << "your new balance is: $" << accounts[static_cast<uint64_t>(entered_account_number) - static_cast<uint64_t>(index_correction)]->GetBalance() << std::endl << std::endl;
 		}
 		else
 		{

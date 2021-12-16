@@ -14,7 +14,7 @@
  * 
  * Increments account number every time a SavingsAccount object is created.
 */
-SavingsAccount::SavingsAccount()
+SavingsAccount::SavingsAccount() noexcept
 {
 	++account_number_;
 }
@@ -53,9 +53,9 @@ SavingsAccount::SavingsAccount(std::string name, double initial_deposit, double 
  * 
  * @return Void.
 */
-void SavingsAccount::Deposit(double amount)
+void SavingsAccount::Deposit(double amount) noexcept
 {
-	double new_balance = GetBalance() + amount;
+	const double new_balance = GetBalance() + amount;
 
 	SetBalance(new_balance);
 }
@@ -72,9 +72,9 @@ void SavingsAccount::Deposit(double amount)
  * 
  * @return Void.
 */
-void SavingsAccount::Withdraw(double amount)
+void SavingsAccount::Withdraw(double amount) noexcept
 {
-	double new_balance = GetBalance() - amount;
+	const double new_balance = GetBalance() - amount;
 
 	SetBalance(new_balance);
 }

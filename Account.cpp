@@ -43,19 +43,20 @@ Account::Account(std::string name, double initial_deposit)
 Account::Account(std::string name, double initial_deposit, double interest_rate)
 	: name_{ name }, balance_{ initial_deposit }, interest_rate_{ interest_rate } {}
 
+//Account::~Account() {}
 
 // accessors
 // --------------------------------------------------------
 // getters
-std::string Account::GetName() { return name_; }
-double Account::GetBalance() { return balance_; }
-double Account::GetInterestRate() { return interest_rate_; }
-int Account::GetAccountNumber() { return account_number_; }
+auto Account::GetName()->std::string { return name_; }
+auto Account::GetBalance()noexcept->double { return balance_; }
+auto Account::GetInterestRate()noexcept->double { return interest_rate_; }
+auto Account::GetAccountNumber()noexcept->int { return account_number_; }
 
 // setters
 void Account::SetName(std::string name) { name_ = name; }
-void Account::SetBalance(double balance) { balance_ = balance; }
-void Account::SetInterestRate(double interest_rate) { interest_rate_ = interest_rate; }
+void Account::SetBalance(double balance) noexcept { balance_ = balance; }
+void Account::SetInterestRate(double interest_rate) noexcept { interest_rate_ = interest_rate; }
 int Account::account_number_ = 0; // set static member variable to 0
 
 

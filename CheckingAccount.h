@@ -21,7 +21,7 @@ class CheckingAccount : public Account // LO2
 {
 public:
 	// constructors
-	CheckingAccount();
+	CheckingAccount() noexcept;
 	CheckingAccount(std::string name, double initial_deposit);
 
 	// accessors
@@ -30,8 +30,8 @@ public:
 	// setters
 
 	// member methods
-	void Deposit(double amount) override;
-	void Withdraw(double amount) override;
+	void Deposit(double amount) noexcept override;
+	void Withdraw(double amount) noexcept override;
 
 private:
 

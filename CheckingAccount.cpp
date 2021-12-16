@@ -14,7 +14,7 @@
  *
  * Increments account number every time a CheckingAccount object is created.
 */
-CheckingAccount::CheckingAccount()
+CheckingAccount::CheckingAccount() noexcept
 {
 	++account_number_;
 }
@@ -49,9 +49,9 @@ CheckingAccount::CheckingAccount(std::string name, double initial_deposit)
  * 
  * @return Void.
 */
-void CheckingAccount::Deposit(double amount)
+void CheckingAccount::Deposit(double amount) noexcept
 {
-	double new_balance = GetBalance() + amount;
+	const double new_balance = GetBalance() + amount;
 
 	SetBalance(new_balance);
 }
@@ -66,9 +66,9 @@ void CheckingAccount::Deposit(double amount)
  * 
  * @return Void.
 */
-void CheckingAccount::Withdraw(double amount)
+void CheckingAccount::Withdraw(double amount) noexcept
 {
-	double new_balance = GetBalance() - amount;
+	const double new_balance = GetBalance() - amount;
 
 	SetBalance(new_balance);
 }
